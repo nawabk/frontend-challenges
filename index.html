@@ -9,8 +9,24 @@
     <h2>Frontend Challenges Project</h2>
     <ul>
       <li>
-        <a href="/testimonial-card/index.html">Testimonial Card</a>
+        <a href="#" id="testimonial-card">Testimonial Card</a>
       </li>
     </ul>
+    <script>
+      const list = document.querySelector("ul");
+      list.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = e.target;
+        if (target?.nodeName === "A") {
+          const targetId = target.getAttribute("id");
+          const currentPath =
+            location.pathname === "/" ? "/" : `${location.pathname}/`;
+          console.log(currentPath);
+          const url = `${currentPath}${targetId}/index.html`;
+          console.log(url);
+          window.location.href = url;
+        }
+      });
+    </script>
   </body>
 </html>
