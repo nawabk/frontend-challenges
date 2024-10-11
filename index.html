@@ -19,11 +19,8 @@
         const target = e.target;
         if (target?.nodeName === "A") {
           const targetId = target.getAttribute("id");
-          const currentPath =
-            location.pathname === "/" ? "/" : `${location.pathname}/`;
-          console.log(currentPath);
+          const currentPath = location.pathname;
           const url = `${currentPath}${targetId}/index.html`;
-          console.log(url);
           window.location.href = url;
         }
       });
